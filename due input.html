@@ -3,7 +3,7 @@
 <body>
 <h1>Moltiplicazione tra due numeri </h1>
 <form id="frm1" >
-Primo numero: <input type="number" name="num1" value=""><br>
+Primo numero: <input type="number" name="num1" value=""><br> <!--box dove inserire gli input-->
 Secondo Numero: <input type="number" name="num2" value=""><br><br>
  <!-- <input type="submit" value="Input dati Trekking">-->
 </form>
@@ -11,13 +11,16 @@ Secondo Numero: <input type="number" name="num2" value=""><br><br>
 
 <button onclick="myFunction()">Calcola il risultato:</button>
 
-<p>Il primo numero è:</p>
-<p id="num1"></p>
+<p>Il primo numero è:</p> 
+<p id="num1"></p> 
 <p>Il secondo numero è:</p>
 <p id="num2"></p>
 
 Il risultato è :
 <p id="demo"></p>
+
+<!--inizio dello script-->
+
 <script>
 function myFunction() {
 
@@ -33,7 +36,7 @@ document.getElementById("num2").innerHTML =num2;
 }
 
 function Calcolo(n1,n2){
-return n2*n1;
+return n2*n1; 
 }
 
 </script>
