@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+    .btn-group button {
+  background-color: #ff9e02; /* Green background */
+  border: 1px solid rgb(0, 0, 0); /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  margin: 5px;
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #ff9e02;}
+
+#output{
+    color: blue;
+    font-size: 150%;
+}
+
+#output3{
+    color: rgb(255, 0, 0);
+    font-size: 150%;
+}
+#output4{
+    color: rgb(21, 255, 0);
+    font-size: 150%;
+}
+#output5{
+    color: rgb(255, 153, 0);
+    font-size: 150%;
+}
+#output6{
+    color: rgb(0, 234, 255);
+    font-size: 150%;
+}
+#output7{
+    color: rgb(146, 39, 132);
+    font-size: 150%;
+}
+#output8{
+    color: rgb(255, 230, 0);
+    font-size: 150%;
+}
+#output9{
+    color: rgb(98, 98, 102);
+    font-size: 150%;
+}
+#output10{
+    color: rgb(5, 0, 0);
+    font-size: 150%;
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Tabelline</h1>
+    <h3>Premere una volta per output sui puntini</h3>
+    <h3>Premere due volte per output nell'alert</h3>
+
+    <div class="btn-group">
+      <button onclick="tabellinadel2()" ondblclick="tabellinadel2a()">Tabellina del 2</button>
+      <button onclick="tabellinadel3()" ondblclick="tabellinadel3a()">Tabellina del 3</button>
+      <button onclick="tabellinadel4()" ondblclick="tabellinadel4a()">Tabellina del 4</button>
+      <button onclick="tabellinadel5()" ondblclick="tabellinadel5a()">Tabellina del 5</button>
+      <button onclick="tabellinadel6()" ondblclick="tabellinadel6a()">Tabellina del 6</button>
+      <button onclick="tabellinadel7()" ondblclick="tabellinadel7a()">Tabellina del 7</button>
+      <button onclick="tabellinadel8()" ondblclick="tabellinadel8a()">Tabellina del 8</button>
+      <button onclick="tabellinadel9()" ondblclick="tabellinadel9a()">Tabellina del 9</button>
+      <button onclick="tabellinadel10()" ondblclick="tabellinadel10a()">Tabellina del 10</button>
+    </div>    
+
+    <p id="output">.....</p>
+    <p id="output3">.....</p>
+    <p id="output4">.....</p>
+    <p id="output5">.....</p>
+    <p id="output6">.....</p>
+    <p id="output7">.....</p>
+    <p id="output8">.....</p>
+    <p id="output9">.....</p>
+    <p id="output10">.....</p>
+   
+<script>
+
+
+/* funzioni con alert, con due click */
+
+function tabellinadel2a() {
+    alert("2 4 6 8 10 12 14 16 18 20");
+}
+
+function tabellinadel3a() {
+    alert("3 6 9 12 15 18 21 24 27 30");
+    
+}
+function tabellinadel4a() {
+    alert("4 8 12 16 20 24 28 32 36 40");
+    
+}
+function tabellinadel5a() {
+    alert("5 10 15 20 25 30 35 40 45 50");
+}
+
+function tabellinadel6a() {
+    alert("6 12 18 24 30 36 42 48 54 60");
+    
+}
+function tabellinadel7a() {
+    alert("7 14 21 28 35 42 49 56 63 70");
+    
+}
+
+function tabellinadel8a() {
+    alert("8 16 24 32 40 48 56 64 72 80");
+}
+
+function tabellinadel9a() {
+    alert("9 18 27 36 45 54 63 72 81 90");
+    
+}
+function tabellinadel10a() {
+    alert("10 20 30 40 50 60 70 80 90 100");
+    
+}
+
+
+
+   
+/* funzioni con inner , con un click*/
+
+
+    function tabellinadel2() { 
+       document.getElementById("output").innerHTML=("2 4 6 8 10 12 14 16 18 20");
+        
+    }
+    function tabellinadel3() {
+       document.getElementById("output3").innerHTML=("3 6 9 12 15 18 21 24 27 30");
+        
+    }
+    function tabellinadel4() {
+       document.getElementById("output4").innerHTML=("4 8 12 16 20 24 28 32 36 40");
+        
+    }
+    function tabellinadel5() {
+       document.getElementById("output5").innerHTML=("5 10 15 20 25 30 35 40 45 50");
+        
+    }
+    function tabellinadel6() {
+       document.getElementById("output6").innerHTML=("6 12 18 24 30 36 42 48 54 60");
+        
+    }
+    function tabellinadel7() {
+       document.getElementById("output7").innerHTML=("7 14 21 28 35 42 49 56 63 70");
+        
+    }
+    function tabellinadel8() {
+       document.getElementById("output8").innerHTML=("8 16 24 32 40 48 56 64 72 80");
+        
+    }
+    function tabellinadel9() {
+       document.getElementById("output9").innerHTML=("9 18 27 36 45 54 63 72 81 90");
+        
+    }function tabellinadel10() {
+       document.getElementById("output10").innerHTML=("10 20 30 40 50 60 70 80 90 100");
+        
+    }
+    
+
+</script>
+
+
+</body>
+</html>
