@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 200px;
+        height: 200px;
+        margin: 50px;
+        padding: 15px;
+        border: 1px solid black;
+        text-align:center;
+        float: left;
+        position: relative;
+        
+        
+    }
+
+
+#box1{background-color: red;}
+#box2{background-color: blue;}
+#box3{background-color: green;}
+#box4{background-color: yellow;}
+
+.bottone{margin-top: 180px;}
+
+</style>
+
+<body>
+    <div class="box " id="box1"><button  onclick="cambiacolore()" class="bottone">Cambia colore</button></div>
+    <div class="box " id="box2"><button  onclick="cambiacolore2()" class="bottone">Cambia colore</button></div>
+    <div class="box " id="box3"><button  onclick="cambiacolore3()"class="bottone">Cambia colore</button></div>
+    <div class="box " id="box4"><button  onclick="cambiacolore4()"class="bottone">Cambia colore</button></div>
+</body>
+
+<script>
+    //javascript
+function cambiacolore() {
+    document.getElementById("box1")
+    .style.backgroundColor= "blue"
+}
+function cambiacolore2() {
+    document.getElementById("box2")
+    .style.backgroundColor= "green"
+}
+function cambiacolore3() {
+    document.getElementById("box3")
+    .style.backgroundColor= "yellow"
+}
+function cambiacolore4() {
+    document.getElementById("box4")
+    .style.backgroundColor= "red"
+}
+</script>
+</html>
