@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conto i click che avvengono in 10 secondi</title>
+
+</head>
+
+<link rel="stylesheet" href="./css/rimedio.css">
+
+<body>
+
+    
+    <button class="button17" onclick="lanciodado(),lanciodado2()">Lancia i dadi</button>
+   
+
+    <p>Primo dado:</p>
+    <p id="out1" class="rosso"></p>
+
+    <p>Secondo dado:</p>
+    <p id="out2" class="rosso"></p>
+
+   <img id="win" src="bianco.png">
+
+</body>
+<script>
+
+    function lanciodado()
+    {
+
+    //primo dado
+
+    let casuale=0;
+    let dado=0;
+    let lancio=0;
+    casuale=Math.random();
+    dado=casuale*5;
+    lancio=Math.round(dado)+1;
+    document.getElementById("out1").innerHTML=lancio;
+
+    //secondo dado
+
+    let casuale2=0;
+    let dado2=0;
+    let lancio2=0;
+    casuale2=Math.random();
+    dado2=casuale2*5;
+    lancio2=Math.round(dado2)+1;
+    document.getElementById("out2").innerHTML=lancio2;
+
+    //messaggio di vittoria
+
+    if(lancio==lancio2)
+   {
+   document.getElementById("win").src="win.png"; 
+   }
+}
+ 
+   
+
+  
+
+  
+    
+
+</script>
+</html>
