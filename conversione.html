@@ -1,4 +1,10 @@
 <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Calorie</title>
+    </head>
 <body>
 <h1>CALCOLO CALORIE PER N° GRASSI </h1>
 
@@ -8,60 +14,63 @@
     margin: 30px;
     width: 300px;
     height: 80px;
-    background: dodgerblue;
+    background: rgb(255, 115, 0);
     border-radius: 6px;
     transition: all .3s cubic-bezier(0.67, 0.17, 0.40, 0.83);
     color: white;
-    font-size: xx-large;
+    font-size: x-large;
+    font-family:arial;
     font-family: 'arial';
+    border: 3px solid black;
 }  
 .container{
   
   margin: 30px;
-    width: 180px;
-    height: 400px;
+    width: 200px;
+    height: 250px;
     text-align: center;
-    border: 1px solid black;
+    border: 3px solid black;
 }
       
  .txt{
-        font-size: larger;
+        font-size: large;
       }
-        </style>
+      
+#frm1{
+  font-size: large;
+}
+
+ </style>
 
     <form id="frm1" >
-        Inserisci grassi in grammi: <input type="number" name="Hbase" value="0"><br>
-        Calorie fornite:            <input type="text" name="Harrivo" value="9"><br>
-       
+        Inserisci grassi in grammi: <input type="number" name="grassi" value="0"><br>
+      
         <!-- <input type="submit" value="Input dati Trekking">-->
        </form>
 
 <button class="button"onclick="myFunction()">CALCOLO CALORIE</button>
 
 <div class="container">
-<p>grassi:</p>
-<p id="base"></p>
-<p>calorie:</p>
-<p id="arrivo"></p>
+<p class="txt">Grassi inseriti:</p>
+<p class="txt" id="grassi">...</p>
 
-CONVERSIONE
-<p id="demo"></p><p>kcal</p>
+
+<p class="txt" >CONVERSIONE</p>
+<p class="txt"id="demo">...</p><p class="txt">calorie</p>
 </div>
 <script>
 function myFunction() {
 
+var calorie=9;
 var x = document.getElementById("frm1");
 
-var base=x.elements[0].value;  
-document.getElementById("base").innerHTML =base;
+var grassi=x.elements[0].value;  
+document.getElementById("grassi").innerHTML =grassi;
 
-var arrivo=x.elements[1].value;
-document.getElementById("arrivo").innerHTML =arrivo;
-  
-  document.getElementById("demo").innerHTML =Dislivello(base,arrivo);
+  document.getElementById("demo").innerHTML =Conversione(grassi,calorie);
 }
 
-function Dislivello(numero1,numero2){
+function Conversione(numero1,numero2){
 return numero1*numero2;
 }
 
