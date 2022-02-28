@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calcolo calorie</title>
+
+<style>
+
+#miocontainer{
+ border: 2px black solid;
+  height: 550px;
+  width: 450px;
+  margin: 20px;
+  padding:10px;
+  text-align: center;
+}
+#Button{
+
+margin: 30px;
+width: 300px;
+height: 80px;
+background: rgb(255, 115, 0);
+border-radius: 6px;
+transition: all .3s cubic-bezier(0.67, 0.17, 0.40, 0.83);
+color: white;
+font-size: x-large;
+font-family:arial;
+font-family: 'arial';
+border: 3px solid black;
+text-align: center;
+}  
+</style>
+
+
+</head>
+
+
+<body>
+
+    
+    <div id="miocontainer">
+        <h3>Inserire i valori </h3><br><br>
+
+        <label for="grassi">Grassi:</label>
+         <input type="number" name="grassi" id="input1">
+         <label>g</label>
+        <p></p>
+        <label for="carboidrati">Carboidrati:</label>
+        <input type="number" name="carboidrati" id="input2">
+        <label>g</label>
+        <p></p>
+        <label for="proteine">Proteine:</label>
+         <input type="number" name="proteine" id="input3">
+         <label>g</label>
+         <p></p>
+         <label for="fibre">Fibre:</label>
+         <input type="number" name="fibre" id="input4">
+         <label>g</label>
+         <p></p>
+         
+
+         <button id="Button" onclick="Converti()">Converti il Peso in kcal</button>
+
+         <div>
+            <p id="out">...</p><br>
+            <p id="out2">...</p><br>
+        </div>
+    </div>
+<script>
+    function Converti() {
+      let pesograsso=  document.getElementById("input1").value;
+      let pesocarbo= document.getElementById("input2").value;
+      let pesoprot=  document.getElementById("input3").value;
+      let pesofibre=  document.getElementById("input4").value;
+    
+      var calorie;
+      var joule;
+      var grassi;
+      var carbo;
+      var proteine;
+      var fibre;
+
+      grassi=pesograsso*9;
+      carbo=pesocarbo*4;
+      proteine=pesoprot*4;
+      fibre=pesofibre*2;
+
+      calorie=grassi+carbo+proteine+fibre;
+      joule=calorie*4,184;
+
+      document.getElementById("out").innerHTML=calorie+" kcal";
+      document.getElementById("out2").innerHTML=joule+" kj";
+    }
+
+</script>
+
+
+</body>
+</html>
