@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Algoritmo per test di Primalità</title>
+    
+</head>
+<body>
+    <div class="container text-center my-5">
+        <h1>Dato un input stabilire se questo è primo</h1><br>
+        <input id="input1" type="number">
+        <button class="button1" onclick="calcola();">Calcola</button>
+    </div>
+    <div class="container my-5 px-5">
+        <ul>
+        <li>
+            <h4>1) Stampare tutti i numeri da 1 a 100</h4>
+            <button class="button1" onclick="task1()">Stampa</button>
+        </li> 
+        <br>
+        <li>
+            <h4>2-3) Stampare i numeri da 1 a 100 ma quelli primi  stamparli con un * accanto
+                e contare quanti primi ci sono tra 1 e 100
+            </h4>
+            <button class="button1" onclick="task23()">Stampa</button>
+        </li> 
+        <br>
+        <li>
+            <h4>4) Contare quanti primi ci sono tra 100 e 200 ....200 e 300 .....300 e 400 cosi via fino a 10000</h4>
+            <button class="button1" onclick="task4()">Calcola per ogni numero</button>
+            <p id="out4"></p>
+        </li> 
+        <br>
+        <li>
+            <h4>5) Fare una funzione che dati due numeri in input stabilisca che siano primi e solo se sono primi
+                li moltiplichi tra loro.</h4>
+                <input id="input2" type="number">
+                <input id="input3" type="number">
+            <button class="button1" onclick="calcola2()">Calcola</button>
+        </li> 
+        <p id="out1A"></p>
+        <p id="out1B"></p>
+        <p id="out2A"></p>
+        <p id="out2B"></p>
+        <p id="out3A"></p>
+        <p id="out3B"></p>
+    </ul>   
+    </div>
+    <script>
+
+        function calcola()
+        {
+            let n=0;
+            n=document.getElementById("input1").value;
+            if(isPrime(n))
+            {
+                document.write(n+" è primo");
+            }
+            else
+            {
+                document.write(n+" non è primo");
+            }
+        }
+
+        
+
+        function isPrime(n){
+            /*function che ritorna 'true' se il numero n è primo, cioè il numero n
+            ha 2 fattori (1 e n). 
+            Altrimenti ritorna 'false' se n non è primo, cioè se ha più di 2 fattori*/
+
+            let OutPrimo=true;   //Ipotizzo che tutti gli n siano numeri primi
+            for(let fattore=2;fattore<=n/2;fattore++)   //cerco i fattori di n
+            {
+                if(n%fattore==0)
+                {
+                    OutPrimo=false;
+                }
+            }
+
+            return OutPrimo;
+        }
+
+        //stampare la lista dei numeri da 1 a 100
+
+        function task1(n){
+            for(n=1;n<=100;n++)
+            {
+                document.write(n+"<br>");
+            }
+        }
+
+        //stampare la lista dei numeri da 1 a 100 con i numeri primi con '*'
+
+        function task23(n){
+          
+            let contPrime=0;
+
+            for(let n=1;n<=100;n++)
+            {
+                if(isPrime(n))
+                {
+                    document.write(n+"*"+"<br>");
+                    contPrime++;
+                }
+                else
+                {
+                    document.write(n+"<br>");
+                }
+
+            }
+
+            document.write("<h2>"+"Ci sono "+contPrime+" numeri primi "+"</h2>");
+
+            function isPrime(n){
+
+            let OutPrimo=true;   //Ipotizzo che tutti gli n siano numeri primi
+            for(let fattore=2;fattore<=n/2;fattore++)   //cerco i fattori di n
+            {
+                if(n%fattore==0)
+                {
+                    OutPrimo=false;
+                }
+            }
+
+            return OutPrimo;
+        }
+        }
+
+        /*Contare quanti primi ci sono tra 100 e 200 ....200 e 
+        300 .....300 e 400 cosi via fino a 10000*/
+        let max = 200;
+        let min = 100;
+        let contp=0;
+
+    
+    function task4(i)
+    {
+        
+        max=max+100;
+        min=min+100;
+        for (let i = min; i<=max; i++)
+        {
+            if (isPrime(i) != false)
+            {
+                contp++;
+            }
+        }
+
+        document.getElementById("out4").innerHTML = "Tra " + min + " e " + max + " ci sono " + contp + " numeri primi<br>";
+        contp = 0;
+        function isPrime(n)
+        {
+            //ritorna a true se il numero è primo, cioè il numero n ha 2 fattori, 1 e sè stesso. Altrimenti ritorna false se n non è primo (ha + di 2 fattori)
+    
+            //ipotesi: tutti i n sono primi
+            let OutPrimo = true;
+            for (let fattore = 2; fattore <= n/2; fattore++) //l'ultimo fattore di un numero è sempre (se il numero non è primo) la metà del numero stesso
+            {
+                if (n%fattore==0)
+                {
+                    OutPrimo = false;
+                }
+            }
+            return OutPrimo;
+        }
+
+    }
+
+        function calcola2()
+        {
+
+            let n2=0;
+            n2=document.getElementById("input2").value;
+            if(isPrime(n2))
+            {
+                document.getElementById("out1A").innerHTML= n2+" è primo";
+            }
+            else
+            {
+                document.getElementById("out1B").innerHTML= n2+" non è primo";
+            }
+
+            let n3=0;
+            n3=document.getElementById("input3").value;
+            if(isPrime(n3))
+            {
+                document.getElementById("out2A").innerHTML= n3+" è primo";
+            }
+            else
+            {
+                document.getElementById("out2B").innerHTML= n3+" non è primo";
+            }
+
+            if(isPrime(n2)&&isPrime(n3))
+            {
+                document.getElementById("out3A").innerHTML="Moltiplicazione tra i due numeri = "+n2*n3;
+            }
+            else
+            {
+                document.getElementById("out3B").innerHTML="Almeno uno dei numeri non è primo,<br> non è possibile eseguire la moltiplicazione";
+            }
+        }
+
+        
+
+        function isPrime(n2){
+            /*function che ritorna 'true' se il numero n è primo, cioè il numero n
+            ha 2 fattori (1 e n). 
+            Altrimenti ritorna 'false' se n non è primo, cioè se ha più di 2 fattori*/
+
+            let OutPrimo=true;   //Ipotizzo che tutti gli n siano numeri primi
+            for(let fattore=2;fattore<=n2/2;fattore++)   //cerco i fattori di n
+            {
+                if(n2%fattore==0)
+                {
+                    OutPrimo=false;
+                }
+            }
+
+            return OutPrimo;
+        }
+
+        function isPrime(n3){
+            /*function che ritorna 'true' se il numero n è primo, cioè il numero n
+            ha 2 fattori (1 e n). 
+            Altrimenti ritorna 'false' se n non è primo, cioè se ha più di 2 fattori*/
+
+            let OutPrimo=true;   //Ipotizzo che tutti gli n siano numeri primi
+            for(let fattore=2;fattore<=n3/2;fattore++)   //cerco i fattori di n
+            {
+                if(n3%fattore==0)
+                {
+                    OutPrimo=false;
+                }
+            }
+
+            return OutPrimo;
+        }
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    
+</body>
+</html>
